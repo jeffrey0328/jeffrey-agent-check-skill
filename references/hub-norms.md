@@ -25,6 +25,7 @@
 | `references/project-norms.md` | Agent | Project governance files and checks |
 | `references/rule-norms.md` | Agent | Rule placement, format, checks |
 | `references/memory-norms.md` | Agent | Memory write/read norms and checks |
+| `references/content-boundaries.md` | Agent | Cross-home dispatcher: which home a recordable item goes to, Rule-vs-Skill triage and rule creation, ownership judgment, conflict precedence |
 | `references/preferences.md` | Agent | Jeffrey’s standing preferences (second half of the standard) |
 | `references/sync-on-update.md` | Agent | Sync after another skill is created/updated this turn |
 | `scripts/run_agent_check.py` | Agent / local | Fixed gate check script: structure, id, pointers, machine-local values, file language, README pair, DEVLOG; quick/full depth — `agent-check.md` § Flow |

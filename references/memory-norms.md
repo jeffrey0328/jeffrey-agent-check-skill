@@ -8,6 +8,7 @@ Auto-memory (user scope and project scope) is written and read per the current a
 
 - Save only what persists across conversations: user role/preferences, feedback (corrections and confirmed non-obvious approaches, with the reason), project decisions/owners/deadlines not derivable from code or git (absolute dates), references to external resources.
 - One topic per file; the scope’s `MEMORY.md` index links every topic file with a one-line hook. Keep the index and files in sync both ways.
+- Single home, no duplicate records (Jeffrey 2026-11-21 「不要重复记录」): a fact's full content lives in exactly one file. Jeffrey's decision-tendency / language-system facts belong to the user-scope profile `user-decision-language-profile` — absorb them from other entries (move, then delete the source entry or trim it to a pointer). Index hooks and one-line profile pointers are navigation, not second records; behavioral rules live in the fitting skill, not memory.
 - Conversation-only state belongs in plans or tasks, not memory.
 - No secrets, tokens, or machine-local values in memory that syncs as committed content; project-scoped memory stays on disk (its folder name encodes machine paths).
 - Save immediately when Jeffrey explicitly asks to remember; find and remove the entry when he asks to forget.

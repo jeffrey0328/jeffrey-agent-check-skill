@@ -40,7 +40,7 @@ Records **who references each tracked file** and whether the reference is to the
 | `preferences.md` § Skill shape & language | § Skill kind |
 | `sync-on-update.md` § Resident + § Companion sync | § Agent-specific spec file + § Synchronize companion files |
 | sibling `jeffrey-agent-workflow-skill/SKILL.md` § Updating skills + § Projects | § Spoken names + § Language |
-| sibling `jeffrey-agent-workflow-skill/references/rule-vs-skill.md` (Skill Structure row + § Where agent-specific content lives) | § File roles + § Agent-specific spec file |
+| `content-boundaries.md` § Rule vs Skill triage (Structure row + writing norms) + § Where agent-specific content lives | § File roles + § Agent-specific spec file + § Positive / negative norms |
 | sibling `jeffrey-agent-config-skill` references (authoring pointer) | whole file |
 | sibling `jeffrey-ue-dev-skill` (authoring pointer) | whole file |
 | `examples/three-layer-layout.md` | § Three layers |
@@ -67,7 +67,7 @@ Records **who references each tracked file** and whether the reference is to the
 | `SKILL.md` Route「Rule」| whole file |
 | `hub-norms.md` File index | whole file |
 | `agent-check.md` § Covered content + § Domains | whole file |
-| sibling `jeffrey-agent-workflow-skill/references/rule-vs-skill.md` § Where agent-specific content lives (placement pointer) | § Which home |
+| `content-boundaries.md` § Where agent-specific content lives + § Judging agent-specific content (placement pointer) | § Which home |
 
 ### memory-norms.md
 | Referenced by | Scope |
@@ -75,6 +75,20 @@ Records **who references each tracked file** and whether the reference is to the
 | `SKILL.md` Route「Memory」| whole file |
 | `hub-norms.md` File index | whole file |
 | `agent-check.md` § Covered content + § Domains | whole file |
+| `content-boundaries.md` § Decision tree | § Write |
+
+### content-boundaries.md
+| Referenced by | Scope |
+|---------------|------|
+| `SKILL.md` Route「Where recordable content goes / Rule vs Skill」| whole file |
+| `hub-norms.md` File index | whole file |
+| `rule-norms.md` header + § Which home | § Rule vs Skill triage / § Rule creation workflow |
+| `project-norms.md` § Governance files | § Where agent-specific content lives |
+| `preferences.md` § Naming & creation | § Rule vs Skill triage |
+| sibling `jeffrey-agent-workflow-skill/SKILL.md` § Rules, Skills and repos + § Agent-specific spec index | § Rule vs Skill triage / § Judging agent-specific content |
+| sibling `jeffrey-agent-workflow-skill/references/project-rules.md` (triage gate + templates table) + `delegate-new-chat.md` § Agent-specific procedure | § Rule vs Skill triage / § Where agent-specific content lives |
+| sibling `jeffrey-agent-workflow-skill/README.md` / `README-EN.md` | whole file |
+| **Cites:** `memory-norms.md` § Write; `rule-norms.md` § Which home; `skill-authoring.md` § File roles / § Positive / negative norms / § Agent-specific spec file; `preferences.md` header; sibling `jeffrey-agent-workflow-skill/references/project-rules.md` §1.1.1 + `SKILL.md` § Agent-specific spec index | pointer |
 
 ### preferences.md
 | Referenced by | Scope |

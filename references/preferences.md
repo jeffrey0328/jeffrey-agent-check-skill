@@ -8,7 +8,7 @@ The second half of the check standard (the first half is the current agent app�
 
 - Global personal skills: folder, frontmatter `name`, and git repo name are one `jeffrey-<function>-skill` id. Propose the prefixed final name when Jeffrey gives one without it.
 - Before creating any skill files: confirm the exact name, then ask whether to create a git repo and whether private or public. Never infer a default from silence or from a previous skill.
-- Rule vs Skill: triage first, recommend with a one-sentence reason, wait for his confirmation before creating files (`jeffrey-agent-workflow-skill/references/rule-vs-skill.md`).
+- Rule vs Skill: triage first, recommend with a one-sentence reason, wait for his confirmation before creating files (`content-boundaries.md` § Rule vs Skill triage).
 
 ## Skill shape & language
 
@@ -20,6 +20,8 @@ The second half of the check standard (the first half is the current agent app�
 ## Working style
 
 - Ask yes/no and small-choice questions on the question card with preset options; open-ended questions stay in conversation.
+- Question cards carry their own context: subject + one-line background + the question; he reads cards cold. Never make him repeat an answer already given in conversation or memory; batch open decisions into one card round (`jeffrey-agent-workflow-skill` § Asking Jeffrey).
+- Auto-maintain his decision-tendency / language-system profile in user memory (`user-decision-language-profile`) whenever conversation reveals a new signal (`jeffrey-agent-workflow-skill` § Memory updates).
 - Feedback and reports describe every change or gap by its content and purpose in plain language, never by bare file name — Jeffrey does not memorize file roles. A file path may follow as a trailing hint, never as the subject of the finding.
 - One conversation does one thing (or a few related things); clearly unrelated input goes to a new chat.
 - Edit the original in place — update the existing passage, or add at the fitting place; never append to the end by default.

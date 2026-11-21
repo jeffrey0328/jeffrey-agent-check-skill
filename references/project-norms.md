@@ -9,7 +9,7 @@ A project’s **governance files** are created and maintained per the current ag
 | File | Standard |
 |------|----------|
 | `AGENTS.md` (project root) | Neutral, agent-agnostic; required-skill gates point at skills that exist; startup order and task rules follow `project-rules.md` |
-| `.agents/` + agent adapter files | Only content that one agent alone needs; layout per `project-rules.md` §1.0 and `rule-vs-skill.md` § Where agent-specific content lives |
+| `.agents/` + agent adapter files | Only content that one agent alone needs; layout per `project-rules.md` §1.0 and `content-boundaries.md` § Where agent-specific content lives |
 | `.mdc` rules | Format and gate per `project-rules.md` § 2–3 |
 | `README.md` | Chinese; says what the project is for (not a progress dump) — `jeffrey-agent-workflow-skill` § Projects |
 | `README-EN.md` | English companion of `README.md`, same facts, links both ways — same section |

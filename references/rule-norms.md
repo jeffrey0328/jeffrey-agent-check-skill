@@ -1,12 +1,12 @@
 # Rule norms & checks
 
-Rules (user-level `AGENTS.md` in the agent config home, project `.mdc`, global commands) are created and maintained per the current agent app’s rule spec plus `preferences.md`. Canonical decision and format rules live in `jeffrey-agent-workflow-skill/references/rule-vs-skill.md` and `project-rules.md`; placement of agent-only content is canonical in § Which home below. This file routes there and adds the check standard.
+Rules (user-level `AGENTS.md` in the agent config home, project `.mdc`, global commands) are created and maintained per the current agent app’s rule spec plus `preferences.md`. Canonical decision criteria, triage and rule-creation steps live in `content-boundaries.md` § Rule vs Skill triage / § Rule creation workflow (this skill); project placement detail in `jeffrey-agent-workflow-skill/references/project-rules.md`; placement of agent-only content is canonical in § Which home below. This file routes there and adds the check standard.
 
 **读法:** § Which home for placement; § Check list for the gate.
 
 ## Which home
 
-Triage before creating (Rule vs Skill, wait for Jeffrey’s confirmation) follows `jeffrey-agent-workflow-skill/references/rule-vs-skill.md` § Decision criteria. Placement of agent-only content is canonical here:
+Triage before creating (Rule vs Skill, wait for Jeffrey’s confirmation) follows `content-boundaries.md` § Rule vs Skill triage. Placement of agent-only content is canonical here:
 
 | Content | Home |
 | --- | --- |

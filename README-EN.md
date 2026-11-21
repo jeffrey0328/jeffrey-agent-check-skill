@@ -20,6 +20,7 @@ Steps:
 ## Features
 
 - Covers five domains: skills, plugins, projects (governance files), rules, and memory — each with its own norms and check list, all measured against the current agent app’s spec plus Jeffrey’s preferences.
+- Record-boundary dispatch: when a statement is worth keeping, a decision tree picks its single home (skill / user-level AGENTS.md / project rules / auto-memory), with explicit conflict precedence; Rule-vs-Skill criteria, rule-creation steps, and content-ownership judgment (shared / current app / another app) live in the same boundary file.
 - Mandatory gate: a quick check before covered content is used, a full check before it is created or updated. Must-fix findings are fixed before proceeding; preference-level findings are listed for Jeffrey’s decision.
 - Scriptable checks run through a fixed check script (structure, id, pointers, machine-local values, file language, README pair shape, update log) instead of throwaway code each run; newly discovered repeatable checks are added to the script.
 - `/agent-check` checks all five domains and reports in chat; it can be narrowed to one domain or one specific item.

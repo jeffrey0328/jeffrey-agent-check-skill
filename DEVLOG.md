@@ -1,5 +1,30 @@
 # DEVLOG
 
+## 2026-11-22 01:25 +08
+- 改了什么：`references/content-boundaries.md` 删 § Loading model（四种家加载方式表＋推论段）——加载机制只是讲给 Jeffrey 听的背景，不是规范条文；读法行同步删该节指针。「规则不只放记忆」的规范结论已由决策树事实/指令分流与 memory-norms 单一归属条承载，不丢。`references/hub-norms.md` 文件索引行、两份 README 功能条去掉「怎么加载」表述。
+- 为何：Jeffrey 2026-11-22：「什么时候加载只是我想知道这个不用是规范」。
+- 涉及：`references/content-boundaries.md`、`references/hub-norms.md`、两份 README、`DEVLOG.md`；无被引节丢失（cross-reference 各组未引用 § Loading model），关联记录不变。
+
+## 2026-11-22 01:10 +08
+- 改了什么：`references/content-boundaries.md` 吸收工作流程 skill `references/rule-vs-skill.md` 整文件（该仓已删）：新增 § Rule vs Skill triage（决策标准表、启发式、两条核心判断、写作规范指针、分类确认流程）、§ Rule creation workflow（A–F，原文重复的 E 编号顺手改为 E/F）、§ Where agent-specific content lives、§ Judging agent-specific content（五条归属测试＋共用判定＋试金石＋行动）；决策树与试金石段的跨文件指针改为内部节指针；外部指针补全限定（project-rules §1.1.1、skill-authoring 各节、rule-norms § Which home、工作流 SKILL.md § Agent-specific spec index）。`SKILL.md` 路由行意图扩（Rule vs Skill／创建规则／归属判断）、触发词补 创建规则／rule vs skill／规则还是技能／归属判断；`references/rule-norms.md` 头部与 § Which home 正典指针改本文件；`references/project-norms.md` 治理文件表存放指针改本文件；`references/preferences.md` 分类偏好指针改本文件；`references/cross-reference.md` 本文件组扩为完整被引/引用记录，skill-authoring 与 rule-norms 组的旧 sibling 引用行改名。
+- 为何：Jeffrey 2026-11-22：「有边界文件就不需要 rule vs skill 了吧，都写到一起就好了」。
+- 涉及：`references/content-boundaries.md`、`SKILL.md`、`references/rule-norms.md`、`references/project-norms.md`、`references/preferences.md`、`references/cross-reference.md`、`DEVLOG.md`；两份 README 功能条已述边界分派含分类与归属，无需再改。
+
+## 2026-11-22 00:50 +08
+- 改了什么：`references/content-boundaries.md` § Decision tree 试金石段后补一行指针：技能还是规则模糊时用工作流程 skill `references/rule-vs-skill.md` § Decision criteria 的两条核心判断（已有技能且条目多→就地迭代；能写成一步步执行步骤→技能，否则规则）。判据正文落在工作流程 skill（该仓另记），本处不复述。
+- 为何：Jeffrey 审定边界草案时补充模糊情形的核心判据。
+- 涉及：`references/content-boundaries.md`、`DEVLOG.md`；无文件/标题增删，cross-reference 不变。
+
+## 2026-11-22 00:35 +08
+- 改了什么：新增跨域分派器 `references/content-boundaries.md`：四种家（技能、用户级 AGENTS.md、项目规则、自动记忆——记忆与 Memory 是同一机制的两个作用域）的加载模型表（技能按描述触发挂载、用户级 AGENTS.md 每会话全文注入、项目规则进项目即注入、记忆只注入索引正文按需读），四步决策树（不持久→不记；事实→记忆用户级／项目级，决策语言事实归档案；指令→项目规则／用户级 AGENTS.md／应用专属归属／对应技能，先分类再确认；一句含事实＋指令→拆开各归其家），事实与指令的判别试金石（「我偏好X」是事实、「以后都要X」是指令），冲突优先级（项目内项目规则覆盖技能、技能规则压记忆复述、用户级 AGENTS.md 只管配置目录）。`SKILL.md` 路由表加行、frontmatter 触发词补 内容边界／记到哪／该写进哪个；`references/hub-norms.md` 文件索引加行；`references/cross-reference.md` 新增本文件组并给 memory-norms 组补被引行；两份 README 功能条各加一条。
+- 为何：Jeffrey 2026-11-21：要在检查技能拟定记忆、AGENTS.md、SKILL、Memory 的边界——用户提出值得记录的内容时能依规则判定写成哪一个，定好给他看，并说明这几个东西 agent 怎么调用。
+- 涉及：`references/content-boundaries.md`（新建）、`SKILL.md`、`references/hub-norms.md`、`references/cross-reference.md`、两份 README、`DEVLOG.md`。草案留本地待 Jeffrey 审。
+
+## 2026-11-22 00:10 +08
+- 改了什么：`references/memory-norms.md` § Write 就地补一条「单一归属、不重复记录」：一条事实的完整内容只存一个文件；Jeffrey 的决策倾向／语言体系事实归用户级档案 user-decision-language-profile，从其他条目吸收（搬移后删源条目或修剪成指针）；索引钩子与档案一行指针是导航不算第二份记录；行为规则归对应 skill。
+- 为何：Jeffrey 2026-11-21 整理过往记忆进档案时明确「不要重复记录」。配套记忆整理（档案吸收工程选型标准整条、UI 插件兴趣条修剪重叠句）在用户级记忆侧执行。
+- 涉及：`references/memory-norms.md`、`DEVLOG.md`；无文件/标题增删，cross-reference 不变；README 不列规范明细，无需改。
+
 ## 2026-11-22 00:02 +08
 - 改了什么：`references/skill-authoring.md` § Agent-specific spec file 开头句纠正：分支集与命名从「agent 特定内容、由规格与项目规则承载」改「共用规则，以 `<agent>` 占位写在工作流程 skill § Git workflow」。
 - 为何：Jeffrey 2026-11-22 纠正：分支机制可以不带 agent 名写成共用规则，不属特定内容；上一轮表述把它推去了特定内容。

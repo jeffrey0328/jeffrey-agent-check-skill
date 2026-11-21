@@ -11,7 +11,8 @@ description: >-
   Triggers: 检查, 体检, agent 检查, agent-check, 内容规范, agent 规范, 规范检查,
   偏好, 创建skill, 更新skill, 改skill, 编辑skill, 写skill, skill规范, 插件规范,
   plugin, customize, MCP, 项目规范, AGENTS.md, 规则规范, memory, 记忆, 写记忆,
-  改记忆, memory 规范, 记忆检查.
+  改记忆, memory 规范, 记忆检查, 内容边界, 记到哪, 该写进哪个, 创建规则,
+  rule vs skill, 规则还是技能, 归属判断.
   Commands: /agent-check (all five domains); /agent-check <domain or target>.
 ---
 
@@ -45,6 +46,7 @@ Thin control plane. **`/` and `@` paste this entire file** — keep routing-only
 | Project rules / AGENTS.md / DEVLOG / project layout check, 项目规范 | `references/project-norms.md` |
 | Rule / `.mdc` / user-rules check, 规则规范 | `references/rule-norms.md` |
 | Memory write/read/check, 记忆规范, memory 检查 | `references/memory-norms.md` |
+| Where recordable content goes (memory vs AGENTS.md vs skill), Rule vs Skill, 创建规则, 内容边界, 记到哪, 该写进哪个, judging which content belongs to the current agent, which home | `references/content-boundaries.md` |
 | Jeffrey’s standing preferences, 偏好 | `references/preferences.md` |
 | Norms / DoD / where is file X? | `references/hub-norms.md` |
 | Editing/renaming/moving any references/scripts/examples file or `##` heading | `references/cross-reference.md` **first** |
