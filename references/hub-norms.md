@@ -39,12 +39,12 @@
 - **The gate runs before use and before update** of any covered content (skill, plugin, project governance files, rule, memory): quick before use, full before update — `agent-check.md`. Scriptable checks run through the fixed `scripts/run_agent_check.py`; a newly discovered repeatable check is added to that script (or the owning skill's `scripts/`), not re-written as chat-only code each run.
 - The standard is the current agent app’s spec for that content type + `preferences.md`; read the current app’s spec first.
 - Creating or editing any skill reads `skill-authoring.md` first.
-- This skill is resident: other skills created or updated this turn follow `sync-on-update.md`.
+- This skill is content-triggered (loads when agent-related content is touched) and stays in effect once loaded: other skills created or updated this turn follow `sync-on-update.md`.
 - **Check the 关联记录 before editing:** Read `cross-reference.md` first; update it after any cross-reference change.
 - Keep this hub thin; long runbooks stay in `references/`.
 - **Every skill must have the companion files** (README pair, `DEVLOG.md`, `kind.txt`). This skill is the only place that states the requirement — `skill-authoring.md` § File roles; other skills point here instead of restating it.
 - **叫法 and file language are decided here for every skill:** ask Jeffrey for the 叫法 first and record them only in that skill’s `SKILL.md` `description`; `README.md` is the Chinese default human page with an English `README-EN.md` companion, `DEVLOG.md` is the Chinese update log, and everything else is English — `skill-authoring.md` § Spoken names / § Language / § Update log.
-- Updating any skill runs the agent-spec conformance check: generic fixes on the default branch; fixes only the current agent app needs go to its `agent/<agent>` branch (create if missing) in `<agent>-spec.md` — `skill-authoring.md` § Agent-specific spec file.
+- Updating any skill runs the agent-spec conformance check: generic fixes on the default branch; fixes only the current agent app needs go to its `<agent>/main` base branch (create if missing) in `<agent>-spec.md` — `skill-authoring.md` § Agent-specific spec file.
 - Global skills (direct children of the current app’s default skills path) use one id for the folder, frontmatter `name`, and origin repo name: `jeffrey-<function>-skill` (`aaa` or `aaa-bbb-ccc`). A Stride skill uses the `stride-` prefix instead, for example `stride-workbench`. The check marks a mismatch must-fix. Project skills and system skills stay out of this rule — `skill-authoring.md` § Global skill id.
 - After a global skill rename, update the old directory name in global skills, commands, and rules. The check marks a leftover path to a missing skill directory must-fix.
 
@@ -55,7 +55,7 @@
 - Leave a global skill whose folder, frontmatter name, or origin repo name is not that same id. *(← Must: global skill id)*
 - Leave the old directory name in global skills, commands, or rules after a rename. *(← Must: update the old directory name)*
 - Stuff the playbooks into `SKILL.md`. *(← Must: keep this hub thin)*
-- Write an agent-specific fix into a default-branch file. *(← Must: agent-spec conformance check — agent-only fixes on `agent/<agent>`)*
+- Write an agent-specific fix into a default-branch file. *(← Must: agent-spec conformance check — agent-only fixes on `<agent>/main`)*
 
 ## Definition of Done
 
@@ -66,5 +66,5 @@
 - [ ] Global skill folder, frontmatter `name`, and origin repo name are the same `jeffrey-<function>-skill` id, or the same `stride-` id when the skill’s job is Stride. Project skills and system skills were not renamed for this rule.
 - [ ] After a global skill rename, old directory names are updated in global skills, commands, and rules.
 - [ ] Companions aligned (`README.md` / `README-EN.md` / `DEVLOG.md` / `kind.txt`) or explicitly unchanged with reason.
-- [ ] Update-time agent-spec check ran; agent-only fixes are on the `agent/<agent>` branch in `<agent>-spec.md`, not in `SKILL.md` or the default branch.
+- [ ] Update-time agent-spec check ran; agent-only fixes are on the `<agent>/main` base branch in `<agent>-spec.md`, not in `SKILL.md` or the default branch.
 - [ ] Post-write user brief when this skill’s Route / workflow changed.

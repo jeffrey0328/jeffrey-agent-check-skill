@@ -1,13 +1,17 @@
 ---
 name: jeffrey-agent-check-skill
 description: >-
-  Resident norms and mandatory-check hub for ALL agent-related content:
-  skills, plugins, projects, rules, memory. Everything must be created and
-  maintained per the current agent app's own spec plus Jeffrey's preferences;
-  a check runs before any covered content is used or updated. Auto-runs every
-  conversation. Triggers: 检查, 体检, agent 检查, agent-check, 内容规范,
-  agent 规范, 规范检查, 偏好, 创建skill, 更新skill, skill规范, 插件规范,
-  项目规范, 规则规范, memory 规范, 记忆检查.
+  Load this skill whenever the conversation creates, edits, reviews, or uses
+  ANY agent-related content — skills, plugins (including customize), MCP
+  servers and config, memory, project rules (AGENTS.md, .agents/, .mdc),
+  agent specs. Do not wait to be asked; load it BEFORE touching such content
+  and run its check first. Once loaded, it stays in effect for the rest of
+  the conversation. Norms and mandatory-check hub: everything is created and
+  maintained per the current agent app's own spec plus Jeffrey's preferences.
+  Triggers: 检查, 体检, agent 检查, agent-check, 内容规范, agent 规范, 规范检查,
+  偏好, 创建skill, 更新skill, 改skill, 编辑skill, 写skill, skill规范, 插件规范,
+  plugin, customize, MCP, 项目规范, AGENTS.md, 规则规范, memory, 记忆, 写记忆,
+  改记忆, memory 规范, 记忆检查.
   Commands: /agent-check (all five domains); /agent-check <domain or target>.
 ---
 
@@ -48,7 +52,7 @@ Thin control plane. **`/` and `@` paste this entire file** — keep routing-only
 
 ## 始终遵守的最低要求（Always (minimal)）
 
-- **Resident + mandatory gate:** stay in effect the whole conversation. Before **using or updating** any covered content (skill, plugin, project governance files, rule, memory), run the check in `references/agent-check.md` first.
+- **Content-triggered + mandatory gate:** load whenever covered content is touched; once loaded, stay in effect for the rest of the conversation. Before **using or updating** any covered content (skill, plugin, project governance files, rule, memory), run the check in `references/agent-check.md` first.
 - **The standard is two-part:** the current agent app’s own spec for that content type, plus Jeffrey’s preferences (`references/preferences.md`). Read the current app’s spec first; never apply another app’s spec from memory.
 - **Authoring:** creating or editing any skill → read `references/skill-authoring.md` first (then that skill’s own `cross-reference.md`). Global skills only: folder, frontmatter `name`, and git repo name are one `jeffrey-<function>-skill` id. After a global skill rename, update the old directory name in global skills, commands, and rules.
 - When any other skill is created or updated this turn, follow `references/sync-on-update.md`.

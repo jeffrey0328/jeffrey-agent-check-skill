@@ -26,11 +26,11 @@ Steps:
 - Keeps every skill in the same shape: thin routing hub, three layers, bilingual README pair (`README.md` Chinese default + `README-EN.md` English), an all-Chinese update log `DEVLOG.md` (newest first, each entry 改了什么 / 为何 / 涉及), spoken names (叫法) from Jeffrey, one `jeffrey-<function>-skill` id for folder / name / repo, and old-name cleanup after a rename.
 - Agent-specific settings keep their own branch: what only one agent app needs lives on its `agent/<agent>` branch in `<agent>-spec.md`, never in the shared default branch; every skill update runs this conformance split.
 - Records Jeffrey’s standing preferences in one page; a newly stated preference is written in place and existing content is checked for contradictions.
-- Resident sync: when any other skill is created or updated in the same turn, its companions are checked and aligned before the turn ends.
+- Companion sync: when any other skill is created or updated in the same turn, its companions are checked and aligned before the turn ends.
 
 ## How to use
 
-**Resident** — the agent attaches this skill on its own, in every conversation; you do not have to `@` it. It fires whenever covered content is about to be used or updated, and whenever you ask for a check. You can still say `/jeffrey-agent-check-skill` or `@jeffrey-agent-check-skill`.
+**Content-triggered** — the agent attaches this skill on its own whenever the conversation creates, edits, reviews, or uses agent-related content (skills, plugins including customize, MCP, memory, project rules such as AGENTS.md, agent specs); you do not have to `@` it. Once loaded it stays in effect for the rest of the conversation. You can still say `/jeffrey-agent-check-skill` or `@jeffrey-agent-check-skill`.
 
 | You say | What happens |
 |---------|--------------|

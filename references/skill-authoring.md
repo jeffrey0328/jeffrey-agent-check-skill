@@ -199,7 +199,7 @@ The install prompt says「某一个 Agent 产品」, not an agent app name.
 
 ### Agent-specific spec file (the one exception)
 
-A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **branch** of the skill repo (named `agent/<agent>`, not `<agent>` alone, because a remote may already hold `<agent>/...` branches and git cannot hold both), as **one file in the skill folder root**, and nowhere else.
+A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **base branch** of the skill repo (`<agent>/main` — the trunk plus that agent's specific files; branch set and work-branch naming in `jeffrey-agent-workflow-skill` `references/agent-branches.md`), as **one file in the skill folder root**, and nowhere else.
 
 - **Naming rule:** `<agent>-spec.md`, where `<agent>` is the lowercase agent app name (one lowercase word, no spaces). It is the only file in a skill where an agent app name may appear, in its name and in its text.
 - **Index:** `SKILL.md` on the default branch carries one line that states only this naming rule (`<agent>-spec.md` in this folder; read the one for the current agent app if it exists). It names no agent and does not describe the file.
@@ -209,10 +209,10 @@ A skill repo can be referenced by several agent apps (each app's skills parent r
 **Update-time check (required when updating any skill):**
 
 1. Check the skill against the current agent app's skill spec — the same spec the Install prompt reads first (install directory, frontmatter, attach mechanism, human-page requirements).
-2. Split the fixes by audience: what every agent app reads goes to the **default branch**; what only the current agent app needs goes to its branch `agent/<agent>` — create it from the default branch when missing, reuse it when it exists.
+2. Split the fixes by audience: what every agent app reads goes to the **default branch**; what only the current agent app needs goes to its base branch `<agent>/main` — create it from the default branch when missing, reuse it when it exists.
 3. On that branch the agent-specific part goes only into `<agent>-spec.md` (plus the scripts / examples that part needs).
 
-**Must not:** Write an agent-specific fix into `SKILL.md` or any default-branch file to make the skill pass the current agent's spec. *(← Must: update-time check — agent-only fixes live on `agent/<agent>` in `<agent>-spec.md`)*
+**Must not:** Write an agent-specific fix into `SKILL.md` or any default-branch file to make the skill pass the current agent's spec. *(← Must: update-time check — agent-only fixes live on `<agent>/main` in `<agent>-spec.md`)*
 
 This section is the ban list (needed so the check can name what is forbidden). CSS `cursor:` in stylesheets is the CSS property, not an agent app name. A git host (`origin.cursor.com`, `cursor.com`), a hyphenated command or record id (`/push-cursor`, `cursor-config`), a git remote name written as a code span or after `add ` / `-u `, or a protocol prompt deeplink (`cursor://…`), is a host/CLI identifier, not an agent app name.
 
@@ -291,7 +291,7 @@ Skill frontmatter = control plane. The README tells the person how they invoke t
 | **条件自动** | Often `disable-model-invocation: true` + AGENTS；**or** omit disable and rely on `description` match | If AGENTS path: add pointer |
 | **常驻 / 默认** | **Omit** `disable-model-invocation`；`description` 写清常驻意图 | Optional |
 
-Defaults if unanswered: **ask** — do not guess. Current set: **`jeffrey-agent-workflow-skill`** → **常驻 / 默认**（description）；**`jeffrey-ue-dev-skill`**（UE 唯一入口，域内容在其 `modules/`）→ **条件自动**（`AGENTS.md` + `disable-model-invocation: true`）；**`jeffrey-agent-check-skill`** → **常驻 / 默认**（description：五域内容规范 + 使用前/更新前强制检查；创建/编辑 skill 先读本规范；其他 skill 本轮被改时同步配套）。
+Defaults if unanswered: **ask** — do not guess. Current set: **`jeffrey-agent-workflow-skill`** → **常驻 / 默认**（description）；**`jeffrey-ue-dev-skill`**（UE 唯一入口，域内容在其 `modules/`）→ **条件自动**（`AGENTS.md` + `disable-model-invocation: true`）；**`jeffrey-agent-check-skill`** → **条件自动 / 相关内容触发**（description：创建、修改、审阅或使用 skill、插件（含 customize）、MCP、记忆、项目规则、应用规格时加载并先检查；挂载后整条对话生效。Jeffrey 2026-11-21 由常驻改为内容触发——常驻式描述被模型当可选噪声，实测不挂载）。
 
 ## Partial read (skills & rules → context/cache)
 

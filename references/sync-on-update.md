@@ -1,12 +1,12 @@
 # Sync when another skill updates
 
-This skill is **常驻**. When it is attached and **any other skill** under the current agent app’s default skills path is created or updated this turn, run this sync before ending the turn.
+This skill is **content-triggered** (it loads when agent-related content is touched) and stays in effect once attached. When it is attached and **any other skill** under the current agent app’s default skills path is created or updated this turn, run this sync before ending the turn.
 
 **读法:** § Resident for the always-on duty; § Companion sync for what to align; § New skill for a folder just added to the fleet.
 
 ## Resident (always-on)
 
-1. Run the update-time check on the changed skill (`agent-check.md` full depth + `skill-authoring.md` § Agent-specific spec file): current-app spec conformance, agent-only fixes to its `agent/<agent>` branch.
+1. Run the update-time check on the changed skill (`agent-check.md` full depth + `skill-authoring.md` § Agent-specific spec file): current-app spec conformance, agent-only fixes to its `<agent>/main` base branch.
 2. Run § Companion sync for the companions that drifted.
 3. End the turn with a one-line Chinese note of what was synced.
 

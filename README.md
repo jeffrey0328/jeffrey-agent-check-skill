@@ -26,11 +26,11 @@ Agent 相关内容的规范与强制检查枢纽，覆盖五个域：skill、插
 - 管每个 skill 必须怎么写：薄路由枢纽、三层结构、README 一对（`README.md` 中文默认 + `README-EN.md` 英文）、全中文更新日志 `DEVLOG.md`（最新在前，每条 改了什么 / 为何 / 涉及）、叫法由 Jeffrey 定、全局 skill 的文件夹/名字/仓库名同一个 `jeffrey-<功能名>-skill` id，改名后清理旧名引用。
 - 每个 Agent 特定的设置保留自己的分支：只有某个 Agent 才需要的内容放在它自己的 `agent/<agent>` 分支的 `<agent>-spec.md` 里，不进共用的默认分支；每次更新 skill 都做这个适配拆分。
 - Jeffrey 的固定偏好记在一页里；新说出的偏好就地写入，并检查已有内容有没有冲突。
-- 常驻同步：同一轮里其他 skill 被创建或修改时，结束前核对并补齐它的配套文件。
+- 配套同步：同一轮里其他 skill 被创建或修改时，结束前核对并补齐它的配套文件。
 
 ## 怎么用
 
-**常驻** —— 每轮对话 Agent 自己会挂载，不需要你 `@`。只要被覆盖的内容要被使用或更新，或者你要求检查，它就会生效。仍然可以说 `/jeffrey-agent-check-skill` 或 `@jeffrey-agent-check-skill`。
+**相关内容触发** —— 对话里只要创建、修改、审阅或使用 agent 相关内容（skill、插件含 customize、MCP、记忆、项目规则如 AGENTS.md、应用规格），Agent 就会自己挂载，不需要你 `@`；挂载后整条对话持续生效。仍然可以说 `/jeffrey-agent-check-skill` 或 `@jeffrey-agent-check-skill`。
 
 | 你说 | 会发生什么 |
 |------|------------|
