@@ -199,7 +199,7 @@ The install prompt says「某一个 Agent 产品」, not an agent app name.
 
 ### Agent-specific spec file (the one exception)
 
-A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **base branch** of the skill repo (the trunk plus that agent's specific files; branch set and work-branch naming are agent-specific content, carried by that agent's spec and the project's own rules), as **one file in the skill folder root**, and nowhere else.
+A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **base branch** of the skill repo (the trunk plus that agent's specific files; branch set and work-branch naming are shared rules written with `<agent>` placeholders in `jeffrey-agent-workflow-skill` § Git workflow), as **one file in the skill folder root**, and nowhere else.
 
 - **Naming rule:** `<agent>-spec.md`, where `<agent>` is the lowercase agent app name (one lowercase word, no spaces). It is the only file in a skill where an agent app name may appear, in its name and in its text.
 - **Index:** `SKILL.md` on the default branch carries one line that states this naming rule and where the file sits (`<agent>-spec.md` in this folder, on the current agent's base branch; read the one for the current agent app if it exists). It names no agent and does not describe the file.

@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-22 00:02 +08
+- 改了什么：`references/skill-authoring.md` § Agent-specific spec file 开头句纠正：分支集与命名从「agent 特定内容、由规格与项目规则承载」改「共用规则，以 `<agent>` 占位写在工作流程 skill § Git workflow」。
+- 为何：Jeffrey 2026-11-22 纠正：分支机制可以不带 agent 名写成共用规则，不属特定内容；上一轮表述把它推去了特定内容。
+- 涉及：`references/skill-authoring.md`、`DEVLOG.md`；无文件/标题增删，cross-reference 不变。本仓其他未提交改动原样保留、未随本次提交。
+
 ## 2026-11-21 23:58 +08
 - 改了什么：`references/skill-authoring.md` § Agent-specific spec file 原地迭代：删去指向工作流程 skill 已删 `references/agent-branches.md` 的悬空指针，分支集与命名改「属 agent 特定内容，由该代理的规格与项目自身规则承载」；本节 `<agent>/main` 字面全改通用「基分支」表述；索引行规范改「命名规则＋存放位置（当前代理基分支）」；新增一条规则：专属 spec 文件不写自己在哪个分支，存放位置只由索引行承载。
 - 为何：Jeffrey 2026-11-21：工作流程 skill 收敛删除 agent-branches.md 后指针悬空；补充指示「agent 专属内容的文件不需要写文件在哪个分支」，按规范落进本节。
