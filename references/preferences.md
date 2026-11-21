@@ -6,39 +6,36 @@ The second half of the check standard (the first half is the current agent app�
 
 ## Naming & creation
 
-- Global personal skills: folder, frontmatter `name`, and git repo name are one `jeffrey-<function>-skill` id. Propose the prefixed final name when Jeffrey gives one without it.
+- Global skill id and prefixed-name proposal: `skill-authoring.md` § Global skill id.
 - Before creating any skill files: confirm the exact name, then ask whether to create a git repo and whether private or public. Never infer a default from silence or from a previous skill.
-- Rule vs Skill: triage first, recommend with a one-sentence reason, wait for his confirmation before creating files (`content-boundaries.md` § Rule vs Skill triage).
+- Rule vs Skill triage and confirmation: `content-boundaries.md` § Rule vs Skill triage.
 
 ## Skill shape & language
 
-- Agent-facing artifacts in English; a bilingual README pair everywhere (`README.md` Chinese default, `README-EN.md` English) carrying the same facts, links both ways; every skill also keeps an all-Chinese `DEVLOG.md` update log. Chinese belongs in `README.md`, the skill `DEVLOG.md`, and a project's `DEVLOG.md`; conversation with Jeffrey is in Chinese.
-- `SKILL.md` stays a thin routing hub; detail in English `references/`, user-facing explanation in the READMEs.
-- 叫法: ask Jeffrey first; record only in that skill’s `description`.
-- Rewrite policy per skill (`kind.txt`, one line): `演进` — the agent may improve it from observed use, with a documented update loop and the 更新标准 / 更新依据 / 更新条目 brief after each agent-driven update; `底本` — no spontaneous rewrite, updates only from Jeffrey’s direct command or a cited source change. This skill is `底本`.
+- Skill shape, companion files, 叫法 and file language: `skill-authoring.md` and `hub-norms.md`. Project human pages and progress log: `jeffrey-agent-workflow-skill` § Projects. Conversation language: `jeffrey-agent-workflow-skill` § Language.
+- Rewrite policy: each skill's `kind.txt` (`skill-authoring.md` § Skill kind).
 
 ## Working style
 
-- Ask yes/no and small-choice questions on the question card with preset options; open-ended questions stay in conversation.
-- Question cards carry their own context: subject + one-line background + the question; he reads cards cold. Never make him repeat an answer already given in conversation or memory; batch open decisions into one card round (`jeffrey-agent-workflow-skill` § Asking Jeffrey).
-- Auto-maintain his decision-tendency / language-system profile in user memory (`user-decision-language-profile`) whenever conversation reveals a new signal (`jeffrey-agent-workflow-skill` § Memory updates).
+- Question cards, context-on-card, repeat-avoidance and batching: `jeffrey-agent-workflow-skill` § Asking Jeffrey.
+- Memory-update announcements and profile auto-maintenance: `jeffrey-agent-workflow-skill` § Memory updates.
 - Feedback and reports describe every change or gap by its content and purpose in plain language, never by bare file name — Jeffrey does not memorize file roles. A file path may follow as a trailing hint, never as the subject of the finding.
-- One conversation does one thing (or a few related things); clearly unrelated input goes to a new chat.
-- Edit the original in place — update the existing passage, or add at the fitting place; never append to the end by default.
-- Checks that can be scripted run through the fixed script in the owning skill's `scripts/` (the content gate: `jeffrey-agent-check-skill/scripts/run_agent_check.py`) — never re-write throwaway check code each run. When a new repeatable check is discovered, add it to that script's proper home.
-- After every skill update, tell Jeffrey what changed and ask whether to push; commit and push only after he agrees. A push command he typed himself already counts as agreement.
-- Decisions that are Jeffrey’s get asked before execution; execution makes no decisions (`jeffrey-agent-workflow-skill` § Workflow).
+- Scriptable checks through the fixed gate script: `agent-check.md` § Flow.
+- One conversation one thing; unrelated input: `jeffrey-agent-workflow-skill` § Unrelated input.
+- Edit the original in place: `jeffrey-agent-workflow-skill` § Updating skills.
+- Tell-then-ask before push: `jeffrey-agent-workflow-skill` § Updating skills.
+- Jeffrey's decisions asked before execution: `jeffrey-agent-workflow-skill` § Workflow.
 
 ## Content hygiene
 
-- Committed content carries no machine- or user-specific values (absolute paths, drive letters, usernames, hosts, local ports/URLs, account ids, tokens). Such values live in a git-ignored `local.md` beside a committed `local.example.md` with `<PLACEHOLDER>` keys.
+- Machine-local values in committed content: `agent-check.md` (machine-local values check row).
 - MCP config travels as sanitized `*.example.json` snippets only; never commit auth files or API keys.
 - Plugins: only the sanitized lock inventory travels; install output and per-machine runtime state never get committed.
 
 ## Product & UI taste
 
 - No helper captions or process-restating microcopy unless Jeffrey asks; follow `jeffrey-web-dev-skill` hub-norms for web UI.
-- Projects keep a Chinese `README.md` (what the project is for) with an English `README-EN.md` companion, and a Chinese `DEVLOG.md` (current progress), updated on every project change.
+- Projects keep a Chinese `README.md` with an English `README-EN.md` companion and a Chinese `DEVLOG.md`: `jeffrey-agent-workflow-skill` § Projects.
 
 ## Adding a preference
 

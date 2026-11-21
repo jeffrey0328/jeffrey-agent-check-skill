@@ -21,6 +21,8 @@ Four homes: **Skill**, **user-level AGENTS.md** (agent config home), **project r
 
 Fact-vs-directive test: 「我偏好 X」/「我看重 X」 describes him → fact (memory). 「以后都要 X」/「不要 Y」 instructs the agent → directive (skill/rule). Skill-vs-rule ambiguity: the two core tests in § Rule vs Skill triage. When genuinely unsure, ask Jeffrey on a card.
 
+**One kind, one skill (Jeffrey 2026-11-22):** the same content or same-kind content never lives in two skills — the owning skill carries it, every other skill points to it. A relevant skill is attached in the conversation anyway, so restating it elsewhere adds nothing. Restate only when the content must stand alone without the owning skill attached (rare); the default is a pointer.
+
 ## Rule vs Skill triage (required before creating)
 
 When the user asks to create behavior guidance, **triage first**. Do **not** assume Rule or Skill — recommend, **wait for confirmation**, then create files.

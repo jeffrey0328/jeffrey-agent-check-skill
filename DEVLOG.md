@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-22 01:03 +08
+- 改了什么：跨 skill 复述清成指针。`references/content-boundaries.md` 决策树后新增「一类内容一个 skill」规矩（同样／同类内容不进两个 skill，其余 skill 只指针；相关 skill 会挂进对话故复述无意义；仅须脱离归属 skill 独立成立时才复述）。`references/preferences.md` 各节复述工作流／编写规范／枢纽规范的条目改指针，只留本页独有的偏好（建库先问、报告按内容讲、MCP 与插件锁卫生、UI 微文案）；`references/project-norms.md` 人类页与文件语言行改指工作流 § Projects。
+- 为何：Jeffrey 2026-11-22：不同 skill 里不要有同样的内容和同类内容；非必要不复述；涉及对应 skill 的内容对话里会挂上该 skill。
+- 涉及：`references/content-boundaries.md`、`references/preferences.md`、`references/project-norms.md`、`DEVLOG.md`。工作流侧同轮另记。
+
 ## 2026-11-22 01:25 +08
 - 改了什么：`references/content-boundaries.md` 删 § Loading model（四种家加载方式表＋推论段）——加载机制只是讲给 Jeffrey 听的背景，不是规范条文；读法行同步删该节指针。「规则不只放记忆」的规范结论已由决策树事实/指令分流与 memory-norms 单一归属条承载，不丢。`references/hub-norms.md` 文件索引行、两份 README 功能条去掉「怎么加载」表述。
 - 为何：Jeffrey 2026-11-22：「什么时候加载只是我想知道这个不用是规范」。
