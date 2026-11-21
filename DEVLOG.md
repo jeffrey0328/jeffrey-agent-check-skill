@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-21 23:58 +08
+- 改了什么：`references/skill-authoring.md` § Agent-specific spec file 原地迭代：删去指向工作流程 skill 已删 `references/agent-branches.md` 的悬空指针，分支集与命名改「属 agent 特定内容，由该代理的规格与项目自身规则承载」；本节 `<agent>/main` 字面全改通用「基分支」表述；索引行规范改「命名规则＋存放位置（当前代理基分支）」；新增一条规则：专属 spec 文件不写自己在哪个分支，存放位置只由索引行承载。
+- 为何：Jeffrey 2026-11-21：工作流程 skill 收敛删除 agent-branches.md 后指针悬空；补充指示「agent 专属内容的文件不需要写文件在哪个分支」，按规范落进本节。
+- 涉及：`references/skill-authoring.md`、`DEVLOG.md`；无文件/标题增删，cross-reference 不变。本仓其他未提交改动（memory-norms、preferences 及 DEVLOG 既有未提交条目）原样保留、未随本次提交；hub-norms／rule-norms／sync-on-update 里的 `<agent>/main` 字面本次未动。
+
 ## 2026-11-21 23:55 +08
 - 改了什么：`references/preferences.md` § Working style 就地补两条偏好：提问卡自带上下文（主题＋一句背景＋问题，冷读卡）、已答过的不再问、开放决策合并一轮卡片（指针到工作流程 skill § Asking Jeffrey）；对话出现新信号时自动维护用户级记忆里的决策倾向／语言体系档案 user-decision-language-profile（指针到工作流程 skill § Memory updates）。
 - 为何：Jeffrey 2026-11-21：「通过记忆记住我的决策倾向、语言体系，每次检测到有可更新的就要更新进去，沟通要高效不要一个问题让我反复重复」。操作规则正文写进工作流程 skill（该仓另记），本页按 § Adding a preference 收录偏好。

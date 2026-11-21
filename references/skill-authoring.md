@@ -199,20 +199,21 @@ The install prompt says「某一个 Agent 产品」, not an agent app name.
 
 ### Agent-specific spec file (the one exception)
 
-A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **base branch** of the skill repo (`<agent>/main` — the trunk plus that agent's specific files; branch set and work-branch naming in `jeffrey-agent-workflow-skill` `references/agent-branches.md`), as **one file in the skill folder root**, and nowhere else.
+A skill repo can be referenced by several agent apps (each app's skills parent repo pins it). The part only one agent app understands lives on that app's own **base branch** of the skill repo (the trunk plus that agent's specific files; branch set and work-branch naming are agent-specific content, carried by that agent's spec and the project's own rules), as **one file in the skill folder root**, and nowhere else.
 
 - **Naming rule:** `<agent>-spec.md`, where `<agent>` is the lowercase agent app name (one lowercase word, no spaces). It is the only file in a skill where an agent app name may appear, in its name and in its text.
-- **Index:** `SKILL.md` on the default branch carries one line that states only this naming rule (`<agent>-spec.md` in this folder; read the one for the current agent app if it exists). It names no agent and does not describe the file.
+- **Index:** `SKILL.md` on the default branch carries one line that states this naming rule and where the file sits (`<agent>-spec.md` in this folder, on the current agent's base branch; read the one for the current agent app if it exists). It names no agent and does not describe the file.
 - **Where it exists:** only on that agent's branch. The default branch holds no `*-spec.md`. Files the spec needs (scripts, examples) go on the same branch; rules that belong to that part go on it too.
+- **No branch self-location:** the spec file never states which branch it lives on; placement is stated only by the index line (Jeffrey 2026-11-21).
 - The check skips root files matching `*-spec.md` in the agent-app-name check.
 
 **Update-time check (required when updating any skill):**
 
 1. Check the skill against the current agent app's skill spec — the same spec the Install prompt reads first (install directory, frontmatter, attach mechanism, human-page requirements).
-2. Split the fixes by audience: what every agent app reads goes to the **default branch**; what only the current agent app needs goes to its base branch `<agent>/main` — create it from the default branch when missing, reuse it when it exists.
+2. Split the fixes by audience: what every agent app reads goes to the **default branch**; what only the current agent app needs goes to its base branch — create it from the default branch when missing, reuse it when it exists.
 3. On that branch the agent-specific part goes only into `<agent>-spec.md` (plus the scripts / examples that part needs).
 
-**Must not:** Write an agent-specific fix into `SKILL.md` or any default-branch file to make the skill pass the current agent's spec. *(← Must: update-time check — agent-only fixes live on `<agent>/main` in `<agent>-spec.md`)*
+**Must not:** Write an agent-specific fix into `SKILL.md` or any default-branch file to make the skill pass the current agent's spec. *(← Must: update-time check — agent-only fixes live on the agent's base branch in `<agent>-spec.md`)*
 
 This section is the ban list (needed so the check can name what is forbidden). CSS `cursor:` in stylesheets is the CSS property, not an agent app name. A git host (`origin.cursor.com`, `cursor.com`), a hyphenated command or record id (`/push-cursor`, `cursor-config`), a git remote name written as a code span or after `add ` / `-u `, or a protocol prompt deeplink (`cursor://…`), is a host/CLI identifier, not an agent app name.
 
