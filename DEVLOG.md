@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-24 13:45 +08
+- 改了什么：命名禁令加「外部命令行派单目标」豁免。`references/skill-authoring.md` § Agent-app names 末尾新增豁免段：被禁名称作为 agent 代跑的外部命令行派单目标（命令、启动器/配置路径、模型键）时是工具标识符，可出现在记录该派单流程的共享文件（家：jeffrey-agent-workflow-skill `references/external-cli-dispatch.md`）；流程仍须任何代理照做即可，宿主应用命名与宿主专属流程进共享文件依旧禁止。`references/content-boundaries.md` § Judging agent-specific content 试金石后新增「派单目标命名不是宿主命名」段：归属测试 1／5 指宿主应用，不指被派单的工具。`scripts/run_agent_check.py`：NAME_EXCEPTION 加 `external-cli-dispatch`，新增 NAME_EXEMPT_FILES 跳过派单流程文件本身的名称检查。
+- 为何：Jeffrey 2026-11-24 指示把 Cursor／Claude Code／Codex 派单流程迁进工作流程 skill 共享部分，选定共享参考文件落点；原禁令使这些名称无法进共享文件，先加豁免再迁移。
+- 涉及：`references/skill-authoring.md`、`references/content-boundaries.md`、`scripts/run_agent_check.py`、`references/cross-reference.md`（skill-authoring 行组加派单文件引用与 Cites，content-boundaries Cites 加 § Agent-app names）、`DEVLOG.md`（本条）；README 对未描述禁令细节，无需改；无文件/标题增删改名。
+
 ## 2026-11-24 14:06 +08
 - 改了什么：scripts/run_agent_check.py 新增 heading-language 必修项——agent 面向文件的标题必须纯英文（跳过 frontmatter 与代码块，正文比例检查原先漏掉少量双语标题）；本技能 SKILL.md 四个双语标题与 references/skill-authoring.md 四个含中文标题改为纯英文。
 - 为何：Jeffrey 指出双语标题违反语言规范且不想再重复；要求全舰队查一遍，并把这项可重复检查沉淀进脚本。
