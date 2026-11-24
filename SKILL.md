@@ -16,7 +16,7 @@ description: >-
   Commands: /agent-check (all five domains); /agent-check <domain or target>.
 ---
 
-# Agent 内容检查枢纽（Agent content check (hub)）
+# Agent content check (hub)
 
 Thin control plane. **`/` and `@` paste this entire file** — keep routing-only. After attach: match intent → Read **one** `references/*.md` (Grep `^## ` → offset/limit if multi-section).
 
@@ -28,7 +28,7 @@ Thin control plane. **`/` and `@` paste this entire file** — keep routing-only
 | 2 Content | `references/` |
 | 3 Cases | `examples/` |
 
-## 命令（Commands）
+## Commands
 
 | Command | Action |
 |---------|--------|
@@ -36,7 +36,7 @@ Thin control plane. **`/` and `@` paste this entire file** — keep routing-only
 | `/agent-check <domain>` | One domain only (`skill` / `plugin` / `project` / `rule` / `memory`) → `references/agent-check.md` |
 | `/agent-check <name-or-path>` | One specific item (a skill folder, a plugin, a project, a rule file, a memory scope) → `references/agent-check.md` |
 
-## 必经路由（Route (required)）
+## Route (required)
 
 | User intent | Read first |
 |-------------|------------|
@@ -52,7 +52,7 @@ Thin control plane. **`/` and `@` paste this entire file** — keep routing-only
 | Editing/renaming/moving any references/scripts/examples file or `##` heading | `references/cross-reference.md` **first** |
 | 其他 skill 本轮被创建或修改 / 同步配套 | `references/sync-on-update.md` |
 
-## 始终遵守的最低要求（Always (minimal)）
+## Always (minimal)
 
 - **Content-triggered + mandatory gate:** load whenever covered content is touched; once loaded, stay in effect for the rest of the conversation. Before **using or updating** any covered content (skill, plugin, project governance files, rule, memory), run the check in `references/agent-check.md` first.
 - **The standard is two-part:** the current agent app’s own spec for that content type, plus Jeffrey’s preferences (`references/preferences.md`). Read the current app’s spec first; never apply another app’s spec from memory.
