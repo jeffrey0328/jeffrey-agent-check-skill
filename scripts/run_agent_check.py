@@ -40,9 +40,12 @@ FORBIDDEN_NAMES = re.compile(
     re.I,
 )
 NAME_EXCEPTION = re.compile(
-    r"(cursor\.com|cursor://|`cursor:|push-cursor|cursor-config|-u\s+cursor|add\s+cursor|CSS|Forbidden names)",
+    r"(cursor\.com|cursor://|`cursor:|push-cursor|cursor-config|-u\s+cursor|add\s+cursor|CSS|Forbidden names|external-cli-dispatch)",
     re.I,
 )
+# Dispatch-target home: CLI names in this file are external tools the agent
+# runs, not the host app (skill-authoring.md § Agent-app names exemption).
+NAME_EXEMPT_FILES = {"external-cli-dispatch.md"}
 MACHINE_LOCAL = [
     (re.compile(r"\b[A-Za-z]:[\\/][\w.\- ]"), "drive-letter path"),
     (re.compile(r"/(?:home|Users)/[\w.\-]+"), "user home path"),
@@ -221,7 +224,7 @@ def check_hygiene(report: Report, path: Path, rel: str):
                 if label == "user home path" and snippet in DOCUMENTED_HOME_ALIASES:
                     continue
                 report.review("machine-local", f"possible {label}: {snippet!r} — confirm or move to local.md", rel, i)
-        if path.suffix == ".md" and not NAME_EXCEPTION.search(line):
+        if path.suffix == ".md" and path.name not in NAME_EXEMPT_FILES and not NAME_EXCEPTION.search(line):
             for m in FORBIDDEN_NAMES.finditer(line):
                 report.review("agent-name", f"forbidden app name {m.group(0)!r} — confirm exception or rewrite", rel, i)
 

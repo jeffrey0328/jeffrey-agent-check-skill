@@ -217,6 +217,8 @@ A skill repo can be referenced by several agent apps (each app's skills parent r
 
 This section is the ban list (needed so the check can name what is forbidden). CSS `cursor:` in stylesheets is the CSS property, not an agent app name. A git host (`origin.cursor.com`, `cursor.com`), a hyphenated command or record id (`/push-cursor`, `cursor-config`), a git remote name written as a code span or after `add ` / `-u `, or a protocol prompt deeplink (`cursor://…`), is a host/CLI identifier, not an agent app name.
 
+**External CLI dispatch targets (exception, Jeffrey 2026-11-24).** When a banned name is the *target* of a shell dispatch — an external CLI the agent runs for Jeffrey — the name, its commands, launcher/config paths and model keys are tool identifiers, not the host agent app, and may appear in shared files that document that dispatch flow (their home: sibling `jeffrey-agent-workflow-skill/references/external-cli-dispatch.md`). The flow must stay one any agent app can follow as-is; naming the *host* app or writing host-specific procedure into shared files is still forbidden.
+
 ## Global skill id (required)
 
 This id applies only to **global** skills: directories directly under the current agent app’s default skills path. Three strings are the same id:

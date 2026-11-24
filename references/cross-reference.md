@@ -45,6 +45,8 @@ Records **who references each tracked file** and whether the reference is to the
 | sibling `jeffrey-ue-dev-skill` (authoring pointer) | whole file |
 | `examples/three-layer-layout.md` | § Three layers |
 | `examples/agent-snippet.md` | § Prefer static / § Positive / negative norms |
+| sibling `jeffrey-agent-workflow-skill/references/external-cli-dispatch.md` (intro) | § Agent-app names (dispatch-target exemption) |
+| **Cites:** sibling `jeffrey-agent-workflow-skill/references/external-cli-dispatch.md` (dispatch-target home) | pointer |
 
 ### plugin-norms.md
 | Referenced by | Scope |
@@ -88,7 +90,7 @@ Records **who references each tracked file** and whether the reference is to the
 | sibling `jeffrey-agent-workflow-skill/SKILL.md` § Rules, Skills and repos + § Agent-specific spec index | § Rule vs Skill triage / § Judging agent-specific content |
 | sibling `jeffrey-agent-workflow-skill/references/project-rules.md` (triage gate + templates table) + `delegate-new-chat.md` § Agent-specific procedure | § Rule vs Skill triage / § Where agent-specific content lives |
 | sibling `jeffrey-agent-workflow-skill/README.md` / `README-EN.md` | whole file |
-| **Cites:** `memory-norms.md` § Write; `rule-norms.md` § Which home; `skill-authoring.md` § File roles / § Positive / negative norms / § Agent-specific spec file; `preferences.md` header; sibling `jeffrey-agent-workflow-skill/references/project-rules.md` §1.1.1 + `SKILL.md` § Agent-specific spec index | pointer |
+| **Cites:** `memory-norms.md` § Write; `rule-norms.md` § Which home; `skill-authoring.md` § File roles / § Positive / negative norms / § Agent-specific spec file / § Agent-app names (dispatch-target exemption); `preferences.md` header; sibling `jeffrey-agent-workflow-skill/references/project-rules.md` §1.1.1 + `SKILL.md` § Agent-specific spec index | pointer |
 
 ### preferences.md
 | Referenced by | Scope |

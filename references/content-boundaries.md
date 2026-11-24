@@ -136,6 +136,8 @@ A passage is **shared** when it is written app-agnostically ("the current agent 
 
 **Litmus when unclear**: could another agent app follow this passage as-is, substituting nothing but its own name and paths for `<agent>`-style placeholders? Yes → shared. Only the current app can → current app. Only another app can → another app's.
 
+**Dispatch-target naming is not host naming (Jeffrey 2026-11-24).** A passage naming an external CLI as the *target* of a shell dispatch (its commands, launcher/config paths, its model keys) is shared when any agent app can run it as-is — ownership tests 1 and 5 name the *host* app, not the dispatched tool. The naming exemption: `skill-authoring.md` § Agent-app names (external CLI dispatch targets).
+
 **Act on the judgment**:
 
 - Apply only shared + current-app content; read the current app's spec when it exists (`jeffrey-agent-workflow-skill` `SKILL.md` § Agent-specific spec index). Another app's rules are never applied to the current app, even when found inside a shared file.
