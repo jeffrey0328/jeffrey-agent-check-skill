@@ -33,6 +33,7 @@ FENCE = re.compile(r"^(```|~~~)")
 LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 BACKTICK_PATH = re.compile(r"`((?:references|examples|scripts)/[^`<>{}\s]+\.(?:md|py|ps1|sh|json|txt))`")
 H2 = re.compile(r"^##\s+(.+?)\s*$", re.M)
+HEADING = re.compile(r"^#{1,6}\s+")
 
 FORBIDDEN_NAMES = re.compile(
     r"\b(cursor|claude\s*code|claude|codex|gemini|antigravity|copilot|workbuddy|trae|codebuddy)\b",
@@ -152,6 +153,21 @@ def check_language(report: Report, path: Path, rel: str, expect: str):
         return
     body = strip_inline_code(strip_fences(strip_frontmatter(text)))
     ratio = cjk_ratio(body)
+    if expect == "en":
+        # Headings are live guidance, not quoted keywords: English-only even when
+        # the body ratio stays low (a few bilingual headings otherwise slip through).
+        in_fence = False
+        in_front = text.startswith("---")
+        for i, line in enumerate(text.splitlines(), 1):
+            if in_front:
+                if i > 1 and line.strip() == "---":
+                    in_front = False
+                continue
+            if FENCE.match(line):
+                in_fence = not in_fence
+                continue
+            if not in_fence and HEADING.match(line) and CJK.search(line):
+                report.must_fix("heading-language", f"{rel} heading must be English-only: {line.strip()[:60]}", rel, i)
     if expect == "zh" and ratio < 0.15:
         report.must_fix("language", f"{rel} must be Chinese (default human page); CJK ratio {ratio:.2f}", rel)
     elif expect == "en":

@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-24 14:06 +08
+- 改了什么：scripts/run_agent_check.py 新增 heading-language 必修项——agent 面向文件的标题必须纯英文（跳过 frontmatter 与代码块，正文比例检查原先漏掉少量双语标题）；本技能 SKILL.md 四个双语标题与 references/skill-authoring.md 四个含中文标题改为纯英文。
+- 为何：Jeffrey 指出双语标题违反语言规范且不想再重复；要求全舰队查一遍，并把这项可重复检查沉淀进脚本。
+- 涉及：scripts/run_agent_check.py、SKILL.md、references/skill-authoring.md、DEVLOG.md；references/cross-reference.md 已核对，所引 § Spoken names 等改名后仍解析，无需改。
+
 ## 2026-11-22 01:03 +08
 - 改了什么：跨 skill 复述清成指针。`references/content-boundaries.md` 决策树后新增「一类内容一个 skill」规矩（同样／同类内容不进两个 skill，其余 skill 只指针；相关 skill 会挂进对话故复述无意义；仅须脱离归属 skill 独立成立时才复述）。`references/preferences.md` 各节复述工作流／编写规范／枢纽规范的条目改指针，只留本页独有的偏好（建库先问、报告按内容讲、MCP 与插件锁卫生、UI 微文案）；`references/project-norms.md` 人类页与文件语言行改指工作流 § Projects。
 - 为何：Jeffrey 2026-11-22：不同 skill 里不要有同样的内容和同类内容；非必要不复述；涉及对应 skill 的内容对话里会挂上该 skill。

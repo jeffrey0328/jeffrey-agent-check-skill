@@ -241,7 +241,7 @@ Project skills (a skill that lives in a project, not in that default skills path
 
 **Must not:** Leave the old directory name in global skills, commands, or rules after the rename. *(← Must: update mentions after rename)*
 
-## Spoken names / 叫法 (required when creating)
+## Spoken names (required when creating)
 
 Every skill answers to the names Jeffrey actually says. This skill owns that rule for all skills.
 
@@ -342,7 +342,7 @@ Each skill is one type, stored as `kind.txt` (single line, UTF-8, only `演进` 
 
 Existing skills without a type: write `演进` and tell the user they can switch. On update, change `kind.txt` only when the user asks to switch type.
 
-### 演进型 — update loop + user brief
+### Evolving kind — update loop + user brief
 
 Must have a written update mechanism (how observation becomes a write). After each agent-driven update (not a user command that already states the exact change), the user-facing brief is three lines:
 
@@ -350,7 +350,7 @@ Must have a written update mechanism (how observation becomes a write). After ea
 - **更新依据** — what was observed (use / pitfall / implementation)
 - **更新条目** — which files or bullets changed
 
-### 底本型 — no spontaneous rewrite
+### Base-text kind — no spontaneous rewrite
 
 Do not add a learn-from-runs or agent-driven rewrite loop. Source-change updates still need one-line **依据** naming the source. Other writes only when the user directly commands them.
 
@@ -371,7 +371,7 @@ After **every** skill update (any change to `SKILL.md`, `references/`, `scripts/
 - **Prefer static:** if the change adds repeatable automation that used to be chat-only dynamic code, ensure `scripts/` / `examples/` / `references/` + **when to use** are present — § Prefer static skill assets.
 - **`cross-reference.md` (this skill's 关联记录):** if you added, renamed, moved, or deleted a `references/` / `scripts/` / `examples/` file or a cited `##` / `§` heading, update the affected rows so it stays the single source for "who references what (whole/§)".
 
-## Cross-skill rollout (关联记录 & shared conventions)
+## Cross-skill rollout (shared conventions)
 
 When you **create or change a skill-wide convention** — the `cross-reference.md` 关联记录 mechanism, a companion-file requirement, hub / `references` shape, or a shared script / flag — **apply it to every skill**, not only the one in front of you, so all skills stay consistent.
 
