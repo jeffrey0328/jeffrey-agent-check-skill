@@ -1,5 +1,10 @@
 # DEVLOG
 
+## 2026-11-28 15:18 +08
+- 改了什么：`references/preferences.md` § Working style 提问卡片那条把「合并成一轮」改成「一张卡只问一件事」，指针仍指向工作流程 skill 的提问规则。
+- 为何：Jeffrey 2026-11-28 把提问卡片改成一张卡只问一件事，偏好页若仍写合并一轮会和现行规则打架。
+- 涉及：`references/preferences.md`（§ Working style）、`DEVLOG.md`（本条）；无被引 `##` 改名，不改关联记录；两份说明页未写这一条细节，不改；kind.txt 不变。
+
 ## 2026-11-24 13:45 +08
 - 改了什么：命名禁令加「外部命令行派单目标」豁免。`references/skill-authoring.md` § Agent-app names 末尾新增豁免段：被禁名称作为 agent 代跑的外部命令行派单目标（命令、启动器/配置路径、模型键）时是工具标识符，可出现在记录该派单流程的共享文件（家：jeffrey-agent-workflow-skill `references/external-cli-dispatch.md`）；流程仍须任何代理照做即可，宿主应用命名与宿主专属流程进共享文件依旧禁止。`references/content-boundaries.md` § Judging agent-specific content 试金石后新增「派单目标命名不是宿主命名」段：归属测试 1／5 指宿主应用，不指被派单的工具。`scripts/run_agent_check.py`：NAME_EXCEPTION 加 `external-cli-dispatch`，新增 NAME_EXEMPT_FILES 跳过派单流程文件本身的名称检查。
 - 为何：Jeffrey 2026-11-24 指示把 Cursor／Claude Code／Codex 派单流程迁进工作流程 skill 共享部分，选定共享参考文件落点；原禁令使这些名称无法进共享文件，先加豁免再迁移。
