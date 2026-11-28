@@ -17,7 +17,7 @@ The second half of the check standard (the first half is the current agent app�
 
 ## Working style
 
-- Question cards, context-on-card, repeat-avoidance and batching: `jeffrey-agent-workflow-skill` § Asking Jeffrey.
+- Question cards, context-on-card, one-card-one-question, repeat-avoidance: `jeffrey-agent-workflow-skill` § Asking Jeffrey.
 - Memory-update announcements and profile auto-maintenance: `jeffrey-agent-workflow-skill` § Memory updates.
 - Feedback and reports describe every change or gap by its content and purpose in plain language, never by bare file name — Jeffrey does not memorize file roles. A file path may follow as a trailing hint, never as the subject of the finding.
 - Scriptable checks through the fixed gate script: `agent-check.md` § Flow.
